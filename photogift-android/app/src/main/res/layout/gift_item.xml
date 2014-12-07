@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:orientation="vertical"
+    android:padding="15dip" android:background="@drawable/gift_background">
+
+        <!--android:background="#fff"-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="3dip"
+        android:paddingLeft="2dip"
+        android:paddingTop="3dip">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@color/black_overlay">
+
+            <TextView
+                android:id="@+id/gift_title"
+                android:layout_width="wrap_content"
+                android:layout_height="40dip"
+                android:layout_alignParentTop="true"
+                android:text="Title"
+                android:textSize="26sp"
+                android:textStyle="bold" android:textColor="@color/darkgrey"/>
+
+            <TextView
+                android:id="@+id/gift_publication_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gift_title"
+                android:paddingLeft="20dp"
+                android:text="Published"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/gift_photo"
+            android:layout_width="match_parent"
+            android:layout_height="400dip"
+            android:layout_gravity="center_vertical"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/gift_item_contributed_photo"
+            android:scaleType="fitCenter" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/gift_author_photo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/gift_item_author_photo"
+            android:src="@android:color/black" />
+
+        <TextView
+            android:id="@+id/gift_author_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/gift_touched_button"
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@id/gift_touched_button"
+            android:layout_toRightOf="@+id/gift_author_photo"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingLeft="4dip"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#303030"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/gift_inappropriate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@+id/gift_touched_count"
+            android:layout_alignTop="@+id/gift_author_photo"
+            android:paddingRight="50dp"
+            android:src="@drawable/ic_block_black_48dp" />
+
+        <TextView
+            android:id="@+id/gift_touched_count"
+            android:background="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/gift_touched_button"
+            android:paddingTop="10dp"
+            android:paddingLeft="20dp"
+            android:textSize="16sp" />
+
+
+
+        <ImageView
+            android:id="@+id/gift_touched_button"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/gift_author_photo"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_favorite_outline_black_48dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/gift_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="Lorem Ipsum"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

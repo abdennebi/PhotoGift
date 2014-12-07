@@ -1,0 +1,64 @@
+def appengineVersion = "1.9.15"
+def springVersion = "4.1.1.RELEASE"
+def googleClientApiVersion="1.18.0-rc"
+def objectifyVersion="5.0.3"
+def jacksonVersion="2.3.3"
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.appengine:gradle-appengine-plugin:1.9.15'
+    }
+}
+
+repositories {
+    mavenCentral();
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'appengine'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+dependencies {
+    /* AppEngine */
+    appengineSdk "com.google.appengine:appengine-java-sdk:${appengineVersion}"
+    compile "com.google.appengine:appengine-api-1.0-sdk:${appengineVersion}"
+    compile "com.googlecode.objectify:objectify:${objectifyVersion}"
+    compile "javax.servlet:servlet-api:2.5"
+
+    /* Logging */
+    /* TODO : Use SLF4J */
+    compile "ch.qos.logback:logback-classic:1.1.2"
+
+    /*Spring*/
+    /* TODO : Exclude Commons Logginng */
+    compile "org.springframework:spring-webmvc:${springVersion}"
+    compile"com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    compile"com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+
+    /*Google Client*/
+    compile "com.google.api-client:google-api-client-appengine:${googleClientApiVersion}"
+    compile 'com.google.api-client:google-api-client-gson:1.17.0-rc'
+    compile 'com.google.apis:google-api-services-plus:v1-rev162-1.17.0-rc'
+    compile 'com.google.code.findbugs:jsr305:3.0.0'
+    compile 'javax.validation:validation-api:1.1.0.Final'
+    compile 'commons-lang:commons-lang:2.6'
+
+    testCompile  'junit:junit:4.11'
+    testCompile  "com.google.appengine:appengine-testing:${appengineVersion}"
+    testCompile  "com.google.appengine:appengine-api-labs:${appengineVersion}"
+    testCompile  "com.google.appengine:appengine-api-stubs:${appengineVersion}"
+
+}
+
+appengine {
+    downloadSdk = true
+    appcfg {
+        oauth2 = true
+    }
+}

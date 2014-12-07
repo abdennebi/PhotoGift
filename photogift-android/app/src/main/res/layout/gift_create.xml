@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/giftRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/gift_create_value_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:inputType="text"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:hint="@string/gift_create_title_default_value" />
+
+        <EditText
+            android:id="@+id/gift_create_value_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/gift_create_value_title"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="20dp"
+            android:hint="@string/gift_create_text_default_value" />
+
+        <ImageView
+            android:id="@+id/gift_create_gift_photo"
+            android:layout_width="match_parent"
+            android:layout_height="300dip"
+            android:layout_gravity="center_vertical"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_below="@+id/gift_create_value_text"
+            android:layout_alignParentRight="true"
+            />
+
+        <ImageView
+            android:id="@+id/gift_create_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/gift_create_gift_photo"
+            android:src="@drawable/ic_send_black_48dp"
+            android:text="Create" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

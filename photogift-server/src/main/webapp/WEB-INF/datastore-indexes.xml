@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--autoGenerate="false" because we activated a fullscan application for re-deploy,
+if autoGenerate="true" this can leads to OutOfMemoryException -->
+
+<datastore-indexes autoGenerate="false">
+    <datastore-index kind="GiftChain" ancestor="false" source="manual">
+        <property name="__key__" direction="desc"/>
+    </datastore-index>
+</datastore-indexes>

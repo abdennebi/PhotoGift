@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PhotoGift</string>
+    <string name="sign_in_text"><![CDATA[Sign In to offer Gifts and view friends\' Gifts]]></string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="signin_dialog_yes">Sign In</string>
+    <string name="signin_dialog_no">No</string>
+    <string name="signin_dialog_message">Would you like to Sign In?</string>
+
+    <!--Global Menu-->
+
+    <string name="menu_search_title">Search</string>
+    <string name="menu_home_title">Home</string>
+    <string name="menu_top_givers_title">Top Givers</string>
+    <string name="menu_refresh_title">Refresh</string>
+    <string name="menu_new_gift_chain_title">New Gift Chain</string>
+    <string name="sign_in_menu_title">Sign In</string>
+    <string name="sign_out_menu_title">Sign out</string>
+    <string name="disconnect_menu_title">Disconnect</string>
+    <string name="settings_menu_title">Settings</string>
+
+    <!--Gift Fragment-->
+
+    <string name="gift_frag_new_gift">New gift</string>
+
+
+    <!-- Gift Item-->
+    <string name="gift_item_touched_count">touched</string>
+    <string name="gift_item_vote_count_zero">0</string>
+    <!--<string name="gift_item_title"></string>-->
+    <!--<string name="gift_item_text"></string>-->
+    <!--<string name="gift_item_owner"></string>-->
+    <string name="gift_item_contributed_photo">Photo Gift</string>
+    <string name="gift_item_author_photo">Author Photo</string>
+
+    <!--gift_create.xml-->
+    <string name="gift_create_label_title">Title</string>
+    <string name="gift_create_label_text">Text</string>
+    <string name="gift_create_title_default_value">Enter title</string>
+    <string name="gift_create_text_default_value">Enter a short text or a poem</string>
+
+
+
+
+
+    <!--Messages-->
+    <string name="toast_connect_wifi">Notice: uploading images over 3g may cost you money.</string>
+    <string name="upload_success">Uploaded Gift !</string>
+    <string name="upload_failure">Unable to upload gift.</string>
+
+
+</resources>

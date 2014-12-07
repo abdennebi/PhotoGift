@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/giftchain_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Title"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="26sp"
+        android:textStyle="bold"
+
+        />
+
+    <ImageView
+        android:id="@+id/giftchain_item_photo_thumnail"
+        android:layout_width="200dip"
+        android:layout_height="200dip"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/giftchain_item_title"
+        android:layout_gravity="right" />
+
+    <TextView
+        android:id="@+id/giftchain_item_title_creation_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/giftchain_item_title"
+        android:paddingLeft="20dp"
+        android:text="creation_time"
+        android:textSize="16sp" />
+
+</RelativeLayout>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+<span id="signinButton">
+  <span
+          class="g-signin"
+          data-callback="signinCallback"
+          data-clientid="13169288993-5f08pj034ji42fndcrvd77bivh2b1j60.apps.googleusercontent.com"
+          data-cookiepolicy="single_host_origin"
+          data-requestvisibleactions="http://schemas.google.com/AddActivity"
+          data-scope="https://www.googleapis.com/auth/plus.login">
+  </span>
+</span>
+
+<script type="text/javascript">
+    function signinCallback(authResult) {
+        if (authResult['access_token']) {
+// Autorisation réussie
+// Masquer le bouton de connexion maintenant que l'utilisateur est autorisé, par exemple :
+            document.getElementById('signinButton').setAttribute('style', 'display: none');
+
+            this.idToken = authResult.id_token;
+            this.accessToken = authResult.access_token;
+
+        } else if (authResult['error']) {
+// Une erreur s'est produite.
+// Codes d'erreur possibles :
+//   "access_denied" - L'utilisateur a refusé l'accès à votre application
+//   "immediate_failed" - La connexion automatique de l'utilisateur a échoué
+            console.log('Une erreur s\'est produite : ' + authResult['error']);
+        }
+    }
+
+
+    /**
+     * Performs an API call to authorize the server and client.
+     *
+     * @param {string} code The authorization code to set in the header.
+     */
+    function authorizeClientWithCode(code) {
+        // Force the client to hit an authorized endpoint on the server.
+        var uri = '/api/user/me';
+
+        $.ajax(uri,
+                {
+                    async: true,
+                    data: '',
+                    beforeSend: function (request) {
+                        request.setRequestHeader('X-OAuth-Code', code + ' redirect_uri=\'postmessage\'');
+                    },
+                    error: function (jqhr, status, error) {
+                        console.log("Error on authorize" + error);
+                    },
+                    success: function () {
+                        console.log("success");
+                    },
+                    type: "GET"
+                });
+    }
+</script>
+
+<!-- Placez ce script JavaScript asynchrone juste devant votre balise </body> -->
+<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/client:plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+</body>
+</html>

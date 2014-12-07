@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+         android:id="@+id/top_givers_item_display_name"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentTop="true"
+         android:textSize="26sp"
+         android:text="Title"
+         android:textColor="@android:color/holo_blue_dark"
+         android:textStyle="bold|italic"/>
+
+    <ImageView
+        android:id="@+id/top_givers_item_photo"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/top_givers_item_display_name"
+        android:layout_gravity="right" />
+
+    <TextView
+         android:id="@+id/top_givers_item_touched_count"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:paddingLeft="20dp"
+         android:text="Touched"
+         android:textSize="16sp"
+         android:layout_below="@+id/top_givers_item_display_name"
+         />
+
+    <ImageView
+        android:layout_toEndOf="@+id/top_givers_item_touched_count"
+        android:layout_below="@+id/top_givers_item_display_name"
+        android:id="@+id/top_givers_item_touched_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_favorite_black_48dp"
+        />
+
+</RelativeLayout>

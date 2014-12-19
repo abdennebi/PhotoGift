@@ -1,0 +1,1 @@
+This project is a my the fulfillment of the Coursera MOOC Capstone project for Android Handheld Programming (https://www.coursera.org/course/androidcapstone)

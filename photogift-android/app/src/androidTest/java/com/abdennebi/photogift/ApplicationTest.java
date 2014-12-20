@@ -1,4 +1,4 @@
-package com.google.plus.samples.haikuplus.myapplication;
+package com.abdennebi.photogift;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,13 +1,11 @@
 package com.abdennebi.photogift.activity;
 
-import android.app.ListFragment;
+
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ListFragment;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.ListView;
 
 import com.abdennebi.photogift.R;
 import com.abdennebi.photogift.api.ApiClient;
@@ -22,7 +20,7 @@ public class GiftChainFragment extends ListFragment implements Listener.GiftChai
 
     private Long giftChainId;
 
-    private GiftArrayAdapter adapter;
+    private GiftAdapter adapter;
 
     private ApiClient apiClient;
 
@@ -40,7 +38,7 @@ public class GiftChainFragment extends ListFragment implements Listener.GiftChai
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        adapter = new GiftArrayAdapter(getActivity(), R.layout.gift_item);
+        adapter = new GiftAdapter(getActivity(), R.layout.gift_item);
         application = ((PhotoGift) (getActivity().getApplication()));
         apiClient = application.getApiClient();
         this.setListAdapter(adapter);
@@ -77,37 +75,6 @@ public class GiftChainFragment extends ListFragment implements Listener.GiftChai
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         boolean authenticated = ((PhotoGift) getActivity().getApplication()).isAuthenticated();
         inflater.inflate(R.menu.gift_fragment_menu, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.menu_item_new_gift:
-//                Intent intent = new Intent(getActivity(), CreateGiftActivity.class);
-//                intent.putExtra(IntentsUtils.Extra.GIFT_CHAIN_ID, giftChain.giftChainId);
-//                startActivityForResult(intent, REQUEST_CODE_GIFT_CREATE);
-//                return true;
-//        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        super.onActivityResult(requestCode, resultCode, data);
-
-//        if (requestCode == GiftChainFragment.REQUEST_CODE_GIFT_CREATE) {
-//            if (resultCode == Activity.RESULT_OK) {
-//                Gift gift = (Gift) data.getSerializableExtra(IntentsUtils.Extra.CREATED_GIFT);
-//                adapter.clear();
-//                adapter.add(gift);
-//                adapter.addAll(giftChain.giftList);
-//                adapter.notifyDataSetChanged();
-//            } else {
-//                Toast.makeText(getActivity(), "There were problem when creating a Gift ", Toast.LENGTH_LONG).show();
-//            }
-//        }
     }
 
     /**

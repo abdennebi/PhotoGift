@@ -27,7 +27,7 @@ import java.io.IOException;
 import static com.abdennebi.photogift.utils.IntentsUtils.Extra.GIFT_CHAIN_ID;
 
 
-public class CreateGiftActivity extends Activity {
+public class GiftCreateActivity extends Activity {
 
     /**
      * Activity result code for image capture.
@@ -113,7 +113,7 @@ public class CreateGiftActivity extends Activity {
                         try {
                             imagePath = IOUtils.copyContent(imageUri, getContentResolver());
                         } catch (IOException e) {
-                            Toast.makeText(CreateGiftActivity.this, "Unable de get the image file", Toast.LENGTH_LONG).show();
+                            Toast.makeText(GiftCreateActivity.this, "Unable de get the image file", Toast.LENGTH_LONG).show();
                         }
                     } else {
                         imagePath = imageUri.getPath();
@@ -194,14 +194,14 @@ public class CreateGiftActivity extends Activity {
         apiClient.createGift(id, imageUri, title, text, new ApiCallbacks.Callback<Gift>() {
             @Override
             public void onSuccess(Gift result) {
-                Toast.makeText(CreateGiftActivity.this, getString(R.string.upload_success), Toast.LENGTH_LONG).show();
+                Toast.makeText(GiftCreateActivity.this, getString(R.string.upload_success), Toast.LENGTH_LONG).show();
                 update(result);
                 progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(Exception ex) {
-                Toast.makeText(CreateGiftActivity.this, getString(R.string.upload_failure), Toast.LENGTH_LONG).show();
+                Toast.makeText(GiftCreateActivity.this, getString(R.string.upload_failure), Toast.LENGTH_LONG).show();
                 update(null);
                 progressDialog.dismiss();
             }

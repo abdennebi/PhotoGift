@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.abdennebi.photogift.activity.CreateGiftActivity"
+            android:name=".activity.GiftCreateActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Create Gift"/>
         <activity

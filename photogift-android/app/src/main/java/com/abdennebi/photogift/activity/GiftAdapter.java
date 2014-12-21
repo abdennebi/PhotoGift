@@ -23,13 +23,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class GiftArrayAdapter extends ArrayAdapter<Gift> {
+public class GiftAdapter extends ArrayAdapter<Gift> {
 
-    public GiftArrayAdapter(Context context, int resource, List<Gift> objects) {
+    public GiftAdapter(Context context, int resource, List<Gift> objects) {
         super(context, resource, objects);
     }
 
-    public GiftArrayAdapter(Context context, int resource) {
+    public GiftAdapter(Context context, int resource) {
         this(context, resource, new ArrayList<Gift>());
     }
 
@@ -122,7 +122,7 @@ public class GiftArrayAdapter extends ArrayAdapter<Gift> {
                                 user.touchingGifts.add(gift.giftId);
                                 Gift item = getItem(position);
                                 item.touchedCount = result.touchedCount;
-                                GiftArrayAdapter.this.notifyDataSetChanged();
+                                GiftAdapter.this.notifyDataSetChanged();
                             }
 
                             @Override

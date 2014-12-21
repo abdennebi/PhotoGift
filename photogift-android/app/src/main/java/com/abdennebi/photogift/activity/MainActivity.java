@@ -4,8 +4,8 @@ import android.accounts.AccountManager;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -75,7 +75,7 @@ public class MainActivity extends BaseActivity implements ApiCallbacks.ServiceCa
 
         setContentView(R.layout.main_activity);
 
-        FragmentManager mFragmentManager = getFragmentManager();
+        android.support.v4.app.FragmentManager mFragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
 
         giftChainListFragment = new GiftChainListFragment();
@@ -319,7 +319,7 @@ public class MainActivity extends BaseActivity implements ApiCallbacks.ServiceCa
             giftChainFragment = new GiftChainFragment();
         }
 
-        FragmentManager mFragmentManager = getFragmentManager();
+        FragmentManager mFragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
         fragmentTransaction.remove(giftChainListFragment);
         fragmentTransaction.add(R.id.fragment_container, giftChainFragment);
@@ -435,7 +435,7 @@ public class MainActivity extends BaseActivity implements ApiCallbacks.ServiceCa
     }
 
     private void startCreateGiftActivity() {
-        Intent intent = new Intent(this, CreateGiftActivity.class);
+        Intent intent = new Intent(this, GiftCreateActivity.class);
         Long giftChainId = null;
         if (giftChainFragment != null && giftChainFragment.isVisible()) {
             // We add a new Gift to the currently displayed Gift Chain

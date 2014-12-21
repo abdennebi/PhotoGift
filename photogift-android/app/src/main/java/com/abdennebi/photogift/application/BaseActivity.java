@@ -1,10 +1,8 @@
 package com.abdennebi.photogift.application;
 
+import android.support.v4.app.FragmentActivity;
 
-import android.app.Activity;
-
-public abstract class BaseActivity extends Activity {
-
+public abstract class BaseActivity extends FragmentActivity {
 
     public PhotoGift application() {
         return (PhotoGift) getApplication();
